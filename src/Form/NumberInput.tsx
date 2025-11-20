@@ -42,7 +42,7 @@ export default function Input({
             onChange={(e) => {
               if (!regex.test(e.target.value)) return;
               setInputValue(e.target.value.replace(",", "."));
-              if (e.target.value === "") {
+              if (["", "."].includes(e.target.value)) {
                 field.onChange(undefined);
               } else {
                 field.onChange(Number(e.target.value));
